@@ -26,7 +26,10 @@ fi
 # Installation d'Ansible si ce n'est pas déjà fait
 if ! command -v ansible &> /dev/null
 then
-    sudo apt install -y ansible
+    sudo apt-add-repository ppa:ansible/ansible -y
+    sudo apt update
+    sudo apt --fix-broken install
+    sudo apt install ansible -y
 fi
 
 # Installation de Nginx si ce n'est pas déjà fait
