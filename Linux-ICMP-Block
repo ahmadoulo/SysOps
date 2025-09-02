@@ -1,8 +1,12 @@
-sudo apt update
-sudo apt install iptables-persistent netfilter-persistent -y
+sudo nano /etc/ufw/before.rules
 
-sudo iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
-sudo ufw deny proto icmp from any to any
+# Bloquer les pings ICMP (echo-request)
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+-A ufw-before-forward -p icmp --icmp-type echo-request -j DROP
 
-sudo netfilter-persistent save
-sudo netfilter-persistent reload
+
+# Bloquer les pings ICMP (echo-request)
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
+
+
+sudo ufw reload
