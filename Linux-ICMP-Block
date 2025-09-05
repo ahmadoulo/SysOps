@@ -8,5 +8,7 @@ sudo nano /etc/ufw/before.rules
 # Bloquer les pings ICMP (echo-request)
 -A ufw-before-input -p icmp --icmp-type echo-request -j DROP
 
+########## ADD TO TOP 
+-A ufw-before-input -p icmp --icmp-type echo-request -j DROP
 
 sudo ufw reload
