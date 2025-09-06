@@ -1,5 +1,5 @@
 mkdir -p /opt/zoraxy && cd /opt/zoraxy
-
+sudo wget https://github.com/tobychui/zoraxy/releases/latest/download/zoraxy_linux_amd64 -O zoraxy
 sudo chmod +x zoraxy
 
 sudo ./zoraxy
